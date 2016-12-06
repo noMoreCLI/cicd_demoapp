@@ -24,6 +24,10 @@ class FlaskTestCase(unittest.TestCase):
         resp = self.app.get('/hello/universe')
         self.assertEquals(resp.data, '"Hello Universe!"\n')
 
+    def test_getCat_correct_http_response(self):
+        resp = self.app.get('/hello/cat')
+	self.assertEquals(resp.status_code, 200)
+
     def tearDown(self):
         pass
 
