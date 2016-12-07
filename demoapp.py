@@ -35,12 +35,10 @@ class HelloUniverse(Resource):
 
 api.add_resource(HelloUniverse, '/hello/universe')
 
-class getCat(Resource):
-    def get(self):
-        url = random.choice(images)
-        return render_template('index.html', url=url)
-
-api.add_resource(getCat, '/hello/cat')
+@app.route('/hello/cat')
+def index():
+    url = random.choice(images)
+    return render_template('index.html', url=url)
 
 if __name__ == '__main__':
     # Runn Flask
