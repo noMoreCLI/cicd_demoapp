@@ -1,6 +1,6 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restful import Resource, Api, reqparse
-
+import random
 
 app = Flask(__name__)
 app = Flask(__name__)
